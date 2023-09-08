@@ -23,9 +23,10 @@ namespace Sprite_Animated_Crystal_Hearts
             this.BackgroundImage = ImageFactory.Background;
             this.BackgroundImageLayout = ImageLayout.Stretch;
 
-            for (int i = 0; i < 50; i++)
+            for (int i = 0; i < 20; i++)
             {
-                Heart newHeart = new Heart(heartFramesList[0]);
+                int startFrame = rand.Next(0, heartFramesList.Count);
+                Heart newHeart = new Heart(heartFramesList[startFrame], startFrame);
                 newHeart.PositionX = rand.Next(10, this.ClientSize.Width - 100);
                 newHeart.PositionY = this.ClientSize.Height + rand.Next(300, 1200);
                 hearts.Add(newHeart);

@@ -10,11 +10,12 @@
         public Image heart;
 
         Random rand = new Random();
-        int frames;
+        int frameNumber;
 
-        public Heart(Image frame)
+        public Heart(Image frame, int frameNumber)
         {
             heart = frame;
+            this.frameNumber = frameNumber;
             Height = 85;
             Width = 105;
 
@@ -23,14 +24,14 @@
 
         public void AnimateHeart(List<Image> framesList)
         {
-            if (frames < 11)
+            if (frameNumber < 11)
             {
-                frames++;
-                heart = framesList[frames];
+                frameNumber++;
+                heart = framesList[frameNumber];
             }
             else
             {
-                frames = 0;
+                frameNumber = 0;
             }
         }
     }
