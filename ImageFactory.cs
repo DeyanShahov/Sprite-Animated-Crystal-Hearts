@@ -12,7 +12,7 @@
 
         private static List<string> GetFilePath(string fileType)
         {
-            return Directory.GetFiles(assetsPath + $"{fileType}").ToList();
+            return Directory.GetFiles(assetsPath, $"*.{fileType}").ToList();
         }
 
         private static Image GetImage(string file)

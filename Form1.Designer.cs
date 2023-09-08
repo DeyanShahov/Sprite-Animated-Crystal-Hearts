@@ -43,6 +43,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(784, 561);
+            DoubleBuffered = true;
             Name = "Form1";
             Text = "Hearts Animated";
             Paint += FormPaintEvent;

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Sprite_Animated_Crystal_Hearts
+﻿namespace Sprite_Animated_Crystal_Hearts
 {
     internal class Heart
     {
@@ -18,21 +12,21 @@ namespace Sprite_Animated_Crystal_Hearts
         Random rand = new Random();
         int frames;
 
-        public Heart()
+        public Heart(Image frame)
         {
-            heart = Image.FromFile("Assets/1.png");
+            heart = frame;
             Height = 85;
             Width = 105;
 
             SpeedY = rand.Next(2, 9);
         }
 
-        public void AnimateHeart()
+        public void AnimateHeart(List<Image> framesList)
         {
             if (frames < 11)
             {
                 frames++;
-                heart = Image.FromFile("Assets/" + frames + ".png");
+                heart = framesList[frames];
             }
             else
             {
